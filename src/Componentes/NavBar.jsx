@@ -5,8 +5,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {Outlet} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+
 export const NavbarEventos = () => {
-    return (
+    
+  return (
         <>
     
     <Navbar bg="light" expand="lg">
@@ -19,7 +22,7 @@ export const NavbarEventos = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link href= {LinK} to={'/usuarios'}>Mostra usuario</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
