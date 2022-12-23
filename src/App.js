@@ -7,6 +7,8 @@ import {CompShowUsers} from './Componentes/MostrarUsuarios.jsx'
 import {NavbarEventos} from './Componentes/NavBar.jsx'
 import {Logo} from './Componentes/Logo.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CompMostrarEventos from './Componentes/MostrarEventos';
+import CompCrearEvento from './Componentes/CrearEvento';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
               <Route path='/' element= {<NavbarEventos />} >
                    <Route path='/usuarios' element= {<CompShowUsers />}/>
                    <Route path='/create' element= {<CompCrearUsuario />}/>
+                   <Route path='/crearevento' element= {<CompCrearEvento />}/>
+                   <Route path='/mostrareventos' element= {<CompMostrarEventos />}/>
               </Route>
 
               </Routes>

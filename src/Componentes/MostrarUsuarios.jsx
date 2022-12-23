@@ -1,16 +1,16 @@
 import axios from 'axios'
-import {useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 //import styles from "./styles.module.css";
 
-const URI = 'http://localhost:8000/shuser'
+const URI = 'http://localhost:8000/shuser/'
 
 export const CompShowUsers = () => {
 
     const [users, setBlog] = useState([])
-    useEffect(()=>{
+    useEffect(() => {
         obtenerUsuario()
-    },[])
+    }, [])
 
     //procedimiento para mostrar totos los registros
     const obtenerUsuario = async () => {
@@ -23,7 +23,7 @@ export const CompShowUsers = () => {
         await axios.delete(`${URI}${_id}`)
         obtenerUsuario()
     }
-    return(
+    return (
         <div className="">
             <div className='row'>
                 <div className='col'>
@@ -35,25 +35,25 @@ export const CompShowUsers = () => {
                                 <th>Correo</th>
                                 <th>Password</th>
                             </tr>
-                        </thead> 
+                        </thead>
                         <tbody>
-                            { users.map ((blog) =>(
+                            {users.map((blog) => (
                                 <tr key={blog._id}>
                                     <td>{blog.nomuser}</td>
                                     <td>{blog.correo}</td>
                                     <td>{blog.password}</td>
                                     <td>
                                         <Link to={`/edit/${blog._id}`} >Editar</Link>
-                                        <button onClick={ () => {deleteBlog(blog._id)}}>Eliminar</button>
+                                        <button onClick={() => { deleteBlog(blog._id) }}>Eliminar</button>
                                     </td>
-                                </tr>    
+                                </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
-            </div>  
+            </div>
         </div>
-    )               
+    )
 }
 
 
