@@ -33,4 +33,5 @@ function App() {
   );
 }
 
+//Se exporta
 export default App;
